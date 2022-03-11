@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>ProfitCenter}" class="sapUiSizeCompact" afterClose="onAfterCloseF4Help" contentWidth="20rem" contentHeight="50%">
+        <HeaderContainer>
+			<SearchField id="idSearchProfitCenter" search="OnSearchProfitCenter" liveChange="OnSearchProfitCenter"></SearchField>
+		</HeaderContainer>
+		<Table id="idF4HelpProfitCenterTable" sticky="ColumnHeaders" inset="false" items="{ParamData>/ProfitCenter}" mode="MultiSelect">
+			<columns>
+				<Column>
+					<Text text="Key" />
+				</Column>
+				<Column>
+					<Text text="Text" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="{ parts: [ {path: 'ParamData>ProfitCenter_ID'}], formatter: '.formatter.LedgerKey' }" />
+						<Text text="{ParamData>ProfitCenterText}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<beginButton>
+			<Button  text="OK" type="Emphasized" press="onProfitCenterF4HelpSelect"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" type="Reject" press="onProfitCenterCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

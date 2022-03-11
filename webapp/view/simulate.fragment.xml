@@ -1,0 +1,16 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="Simulate" class="sapUiSizeCompact" afterClose="onAfterCloseF4Help" contentWidth="76%" contentHeight="75%">
+            <core:Fragment fragmentName="com.tr.runtreetable.view.HeaderIconTabBar" type="XML" />
+                    <!-- SectionLineItems - Section to enter line items -->
+            <core:Fragment fragmentName="com.tr.runtreetable.view.SectionLineItems" type="XML" />
+                    <!-- SectionTax - Section to enter Tax items -->
+		<beginButton>
+			<Button  text="Post" type="Emphasized" press="onPostJE"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" type="Reject" press="onCancelJE"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

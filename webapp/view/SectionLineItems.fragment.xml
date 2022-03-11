@@ -1,0 +1,60 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout">
+    
+    <Table id="idPostJournalEntries"  items="{simulateModel>/}" sticky="ColumnHeaders,HeaderToolbar">
+        <headerToolbar>
+            <OverflowToolbar>
+                <content>
+                    <Title id="idLineItems" text="Line Items" level="H2"/>
+                </content>
+            </OverflowToolbar>
+        </headerToolbar>
+        <columns>
+            <Column>
+                <Label text="{i18n>GLAccount}" required="true"/>
+            </Column>
+            <Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+                <Label text="{i18n>CostCenter}"/>
+            </Column>
+            <Column
+				minScreenWidth="Desktop"
+				demandPopin="true">
+                <Label text="{i18n>ProfitCenter}" />
+            </Column>
+            <Column
+				minScreenWidth="Desktop"
+				demandPopin="true">
+                <Label text="{i18n>Debit}" required="true"/>
+            </Column>
+            <Column>
+                <Label text="{i18n>Credit}" required="true"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Input value="{simulateModel>Account}"  placeholder="{i18n>GLAccount}" editable="false"/>
+                    <Input value="{simulateModel>CostCenter}" placeholder="{i18n>CostCenter}" editable="false"/>
+                    <Input placeholder="{i18n>ProfitCenter}" value="{simulateModel>ProfitCenter}" editable="false"/>
+                    <Input placeholder="{i18n>Debit}" value="{simulateModel>Debit}" editable="false"/>
+                    <Input placeholder="{i18n>Credit}" value="{simulateModel>Credit}" editable="false"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+<OverflowToolbar design="Transparent" height="2em">
+    <content>
+        <ToolbarSpacer/>
+        <ObjectStatus  text="{i18n>TotalDebit}:"/>
+        <ObjectNumber number="{ parts: [ {path: 'response>/'}], formatter: '.formatter.TotalDebit' }" unit="USD" state="Success"/>
+        <ToolbarSpacer width="2rem"/>
+        <ObjectStatus  text="{i18n>TotalCredit}:"/>
+        <ObjectNumber number="{ parts: [ {path: 'response>/'}], formatter: '.formatter.TotalCredit' }" unit="USD" state="Error"/>
+    </content>
+</OverflowToolbar>
+</core:FragmentDefinition>

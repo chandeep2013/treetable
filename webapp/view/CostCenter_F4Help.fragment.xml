@@ -1,0 +1,33 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Dialog title="{i18n>CostCenter}" class="sapUiSizeCompact" afterClose="onAfterCloseF4Help" contentWidth="25%" contentHeight="50%">
+		<HeaderContainer>
+			<SearchField id="idSearchCostCenter" search="OnSearchCostCenter" liveChange="OnSearchCostCenter"></SearchField>
+		</HeaderContainer>
+		<Table id="idF4HelpCostCenterTable" sticky="ColumnHeaders" inset="false" items="{ParamData>/CostCenter}" mode="MultiSelect">
+			<columns>
+				<Column>
+					<Text text="Key" />
+				</Column>
+				<Column>
+					<Text text="Text" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem vAlign="Middle">
+					<cells>
+						<Text text="{ parts: [ {path: 'ParamData>CostCenter_ID'}], formatter: '.formatter.LedgerKey' }" />
+						<Text text="{ParamData>CostCenterText}"/>
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<beginButton>
+			<Button  text="OK" type="Emphasized" press="onCostCenterF4HelpSelect"/>
+		</beginButton>
+		<endButton>
+			<Button text="Cancel" type="Reject" press="onCostCenterCancel"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

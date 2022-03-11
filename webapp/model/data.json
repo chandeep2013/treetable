@@ -1,0 +1,146 @@
+{
+	"nodes": [
+        {
+			"ID": "0101",
+			"Text": "Reference1000",
+			"ParentID": "",
+			"Type": "O",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+
+        {
+			"ID": "10101",
+			"Text": "companycode1001",
+			"ParentID": "0101",
+			"Type": "S",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+
+        {
+			"ID": "1010111",
+			"Text": "Lineitem1",
+			"ParentID": "10101",
+			"Type": "S",
+            "Credit":"10$",
+            "Debit":"10$",
+            "ProfitCenter":"10$",
+            "CostCenter":"10$",
+            "Account":"GL"
+		},
+        {
+			"ID": "1010112",
+			"Text": "Lineitem2",
+			"ParentID": "10101",
+			"Type": "S",
+            "Credit":"10$",
+            "Debit":"10$",
+            "ProfitCenter":"10$",
+            "CostCenter":"10$",
+            "Account":"GL"
+		},
+        
+        {
+			"ID": "01100",
+			"Text": "Reference1010",
+			"ParentID": "",
+			"Type": "O",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+        {
+			"ID": "0100",
+			"Text": "companycode1770",
+			"ParentID": "01100",
+			"Type": "S",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+		{
+			"ID": "0110",
+			"Text": "LineItem1",
+			"ParentID": "0100",
+			"Type": "S",
+
+            "Credit":"100$",
+            "Debit":"100$",
+            "ProfitCenter":"Profit1",
+            "CostCenter":"Cost1",
+            "Account":"GL1"
+		},
+        {
+			"ID": "0111",
+			"Text": "LineItem2",
+			"ParentID": "0100",
+			"Type": "S",
+            
+            "Credit":"110$",
+            "Debit":"110$",
+            "ProfitCenter":"Profit2",
+            "CostCenter":"Cost2",
+            "Account":"GL2"
+		},
+
+		
+
+		{
+			"ID": "11100",
+			"Text": "Reference1710",
+			"ParentID": "",
+			"Type": "O",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+        {
+			"ID": "1100",
+			"Text": "companycode1100",
+			"ParentID": "11100",
+			"Type": "S",
+            "Credit":"",
+            "Debit":"",
+            "ProfitCenter":"",
+            "CostCenter":"",
+            "Account":""
+		},
+        {
+			"ID": "1101",
+			"Text": "LineItem1",
+			"ParentID": "1100",
+			"Type": "S",
+            "Credit":"140$",
+            "Debit":"140$",
+            "ProfitCenter":"Profit5",
+            "CostCenter":"Cost5",
+            "Account":"GL5"
+		},
+		{
+			"ID": "1102",
+			"Text": "LineItem2",
+			"ParentID": "1100",
+			"Type": "S",
+            "Credit":"140$",
+            "Debit":"140$",
+            "ProfitCenter":"Profit5",
+            "CostCenter":"Cost5",
+            "Account":"GL5"
+		}
+        
+
+	]
+}

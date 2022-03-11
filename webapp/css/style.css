@@ -1,0 +1,6 @@
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle {
+    display: none !important;
+}
+.sapUiSimpleForm {
+    width: 98% !important;
+}

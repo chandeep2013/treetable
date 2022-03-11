@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+	<!--  HeaderIconTabBar - Header Icon Tab Bar with all tabs (Header, Attachment, ...  -->
+		<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="{simulateModel>/0/companycodeText}" class="sapUiSmallMargin"
+         labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="3" columnsL="3" columnsM="2" singleContainerFullSize="false" >
+			<f:content>
+				<core:Title text="" />
+				<Label text="JournalEntryDate" required="true"/>
+				<DatePicker id="idJournalEntryDate" value="08/03/2021"  placeholder="Credit"  />
+				<Label text="PostingDate" required="true"/>
+				<DatePicker id="idPostingDate" value="08/03/2021"  placeholder="PostingDate" />
+				<core:Title text="" />
+				<Label text="CompanyCode" required="true"/>
+				<Input placeholder="CompanyCode" editable="false" value="{simulateModel>/0/companycodeText}"/>
+				<Label text="TransactionCurrency" required="true"/>
+				<Input value="USD" placeholder="TransactionCurrency" editable="false" />
+				<core:Title text="" />
+				<Label text="JournalEntryType" required="true"/>
+				<Input placeholder="JournalEntryType" editable="false" value="SE"/>
+				<Label text="Reference"></Label>
+				<Input value="Reference" placeholder="Reference" editable="false"/>
+                <Label text="Ledger"></Label>
+				<Input value="OL" placeholder="Reference" editable="false"/>
+			</f:content>
+		</f:SimpleForm>
+</core:FragmentDefinition>

@@ -1,0 +1,75 @@
+<mvc:View
+    controllerName="com.tr.runtreetable.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table"
+>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="Tree table"  class="sapUiSizeCompact">
+                    <content >
+						<table:TreeTable id="TreeTable"  visibleRowCount="16"  selectionMode="None"
+			                    		rows="{path:'nodeModel>/nodeRoot', parameters: {arrayNames:['children']}, events: { dataReceived: '.onDataReceived'} }"
+			                    		enableSelectAll="false" toggleOpenState="toggleOpenState" >	
+				    	<table:columns>
+                            <table:Column width="8rem">
+						        <table:template>
+							    <CheckBox selected="{nodeModel>selected}" select="onSelectCheckBoxTreeTable" visible="{parts: [ {path: 'nodeModel>type'}], formatter: '.formatter.editable' }"/>
+						    </table:template>
+					        </table:Column>
+		                    <table:Column width="13rem">
+		                        <Label text="Reference"/>
+		                        <table:template>
+		                            <Text text="{nodeModel>text}" />
+		                        </table:template>
+		                    </table:Column>
+                            <table:Column >
+		                        <Label text="GL Account"/>
+		                        <table:template>
+		                            <Input value="{nodeModel>Account}" editable="false"  visible="{parts: [ {path: 'nodeModel>Account'}], formatter: '.formatter.visible' }"/>
+		                        </table:template>
+		                    </table:Column>
+                            <table:Column >
+		                        <Label text="CostCenter"/>
+		                        <table:template>
+		                            <MultiInput value="{nodeModel>CostCenter}" editable="true"  showSuggestion= "true" valueHelpOnly="true" valueHelpRequest="onValueHelpRequestCostCenter"
+                                    visible="{parts: [ {path: 'nodeModel>CostCenter'}], formatter: '.formatter.visible' }"/>
+		                        </table:template>
+		                    </table:Column>
+                            <table:Column >
+		                        <Label text="ProfitCenter"/>
+		                        <table:template>
+		                            <MultiInput value="{nodeModel>ProfitCenter}" editable="true"  showSuggestion= "true" valueHelpOnly="true" valueHelpRequest="onValueHelpRequestProfitCenter"
+                                    visible="{parts: [ {path: 'nodeModel>ProfitCenter'}], formatter: '.formatter.visible' }"/>
+		                        </table:template>
+		                    </table:Column>
+                            <table:Column >
+		                        <Label text="Debit"/>
+		                        <table:template>
+		                            <Input value="{nodeModel>Debit}" editable="false" visible="{parts: [ {path: 'nodeModel>Debit'}], formatter: '.formatter.visible' }"/>
+		                        </table:template>
+		                    </table:Column>
+                            <table:Column >
+		                        <Label text="Credit"/>
+		                        <table:template>
+		                            <Input value="{nodeModel>Credit}" editable="false" visible="{parts: [ {path: 'nodeModel>Credit'}], formatter: '.formatter.visible' }"/>
+		                        </table:template>
+		                    </table:Column>
+	                	</table:columns>
+            		</table:TreeTable>
+					</content>
+                    <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button text="Simulate" type="Accept" press="onSimulate"/>
+                        <Button text="Post" type="Accept" />
+                        <Button text="Cancel" type="Reject" />
+                    </OverflowToolbar>
+                </footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
